@@ -1,4 +1,4 @@
-import { eqNumber } from "fp-ts/lib/Eq"
+import { eqNumber, elem } from "./index"
 
 describe("index functions", () => {
     describe("eqNumber", () => {
@@ -8,6 +8,12 @@ describe("index functions", () => {
 
             const resultTrue = eqNumber.equals(100, 100)
             expect(resultTrue).toBe(true)
+        })
+    })
+
+    describe("elem", () => {
+        it("should check if a number in array", () => {
+            elem(eqNumber)(1, [1, 2, 3, 4, 5])
         })
     })
 })
